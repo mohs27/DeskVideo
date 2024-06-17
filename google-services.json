@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "543214849348",
+    "firebase_url": "https://solodroid-projects.firebaseio.com",
+    "project_id": "solodroid-projects",
+    "storage_bucket": "solodroid-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543214849348:android:959e975c113da3fd13b3f7",
+        "android_client_info": {
+          "package_name": "com.app.webdroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543214849348-hu8ofspfbog1hnhheuoj8hn52os72kmr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4StG0Ibjjt9HNIrLXRtSNcNdQyCwEzOd"
+        },
+        {
+          "current_key": "AIzaSyArS1QSHnaJ0FoNq5pkLPc_rdAY_JjVHEh"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543214849348-hu8ofspfbog1hnhheuoj8hn52os72kmr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
