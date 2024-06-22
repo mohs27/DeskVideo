@@ -1,70 +1,146 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="google-site-verification=pWatsMNCbuA6w8ziNuq3c6wCJz3ugTq-BdwTKcorJEk" />
+	
+<!-- refresh page after 60 seconds -->
+<meta http-equiv="Refresh" content="1">
+<!-- refresh and redirect to https://52808.org/ after 10 seconds -->
+<meta http-equiv="Refresh" content="1;https://52808.org/">
 
+	
 
-<meta name="google-adsense-account" content="ca-pub-9850650985058210"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9850650985058210"
-     crossorigin="anonymous"></script>
-
-
-<script async custom-element="amp-auto-ads"
+	<title></title>
+	<meta charset="utf-8"><meta name="google-site-verification=pWatsMNCbuA6w8ziNuq3c6wCJz3ugTq-BdwTKcorJEk" /><meta name="google-adsense-account" content="ca-pub-9850650985058210"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9850650985058210"
+     crossorigin="anonymous"></script><script async custom-element="amp-auto-ads"
         src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script><meta name="google-adsense-account" content="ca-pub-9850650985058210"><meta name="google-site-verification" content="FUe3NjQe1rXFvoFGF-xPq5cxoggW3bzkYYSWsUtDoQ0" /><script async custom-element="amp-story-auto-ads" src="https://cdn.ampproject.org/v0/amp-story-auto-ads-0.1.js"></script><meta http-equiv="X-UA-Compatible" content="IE=edge"><script async src="https://cdn.ampproject.org/video-iframe-integration-v0.js"></script>
+</head>
+<body style="margin: 0; padding: 0"><embed controls="" playsinline="" src="https://reac-tube.vercel.app/" style="width: 100vw; height: 100vh;"></embed>
+<p>l <script>
+    //  #######  #####  #######
+    //  #       #     # #
+    //  #       #       #
+    //  #####    #####  ######
+    //  #             #       #
+    //  #       #     # #     #
+    //  #######  #####   #####
+
+    // This example is written in ES5 for browser compatibility.
+    // If you wish to write an integration script in ES2015+ that doesn't
+    // require older browser support or is otherwise transpiled into ES5, see
+    // ./frame-es2015.html.
+
+    // Wait for API to initialize
+    (window.AmpVideoIframe = window.AmpVideoIframe || [])
+        .push(onAmpIntegrationReady);
+
+    function onAmpIntegrationReady(ampIntegration) {
+      // `ampIntegration` is an object containing the tools required to
+      // integrate.
+
+      var video = document.querySelector('video');
+      var muted = false;
+
+      var events = ['canplay', 'playing', 'pause', 'ended'];
+
+      for (var i = 0; i < events.length; i++) {
+        // Wrap in IIFE to preserve iterated value.
+        (function(e) {
+          video.addEventListener(e, function() {
+            ampIntegration.postEvent(e);
+          });
+        })(events[i]);
+      }
+
+      // in case we miss `canplay`.
+      if (video.readyState >= video.HAVE_FUTURE_DATA) {
+        ampIntegration.postEvent('canplay');
+      }
+
+      video.addEventListener('volumechange', function() {
+        if (video.volume < 0.01) {
+          muted = true;
+          ampIntegration.postEvent('muted');
+          return;
+        }
+        if (muted) {
+          muted = false;
+          ampIntegration.postEvent('unmuted');
+        }
+      });
+
+      ampIntegration.method('play', function() {
+        video.play();
+      });
+      ampIntegration.method('pause', function() {
+        video.pause();
+      });
+      ampIntegration.method('mute', function() {
+        video.muted = true;
+      });
+      ampIntegration.method('unmute', function() {
+        video.muted = false;
+      });
+      ampIntegration.method('showcontrols', function() {
+        video.controls = true;
+      });
+      ampIntegration.method('hidecontrols', function() {
+        video.controls = false;
+      });
+      ampIntegration.method('fullscreenenter', function() {
+        // Unsupported in example. This should be a call to `requestFullscreen`
+        // or browser equivalents.
+      });
+      ampIntegration.method('fullscreenexit', function() {
+        // Unsupported in example. This should be a call to `exitFullscreen`
+        // or browser equivalents.
+      });
+
+      setInterval(function() {
+        // Post a custom analytics event every 3 seconds.
+        ampIntegration.postAnalyticsEvent('video-custom-foo', /* optional */ {
+          'myVar': Math.random().toString(),
+        });
+      }, 3000);
+    }
+  </script> <amp-auto-ads data-ad-client="ca-pub-9850650985058210" type="adsense"> </amp-auto-ads>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9850650985058210"
+     crossorigin="anonymous"></script>
+<!-- Display -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9850650985058210"
+     data-ad-slot="1457450033"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeskVideo</title>
-    <meta name="google" content="notranslate" />
-    <link rel="manifest" href="./manifest.webmanifest">
-    <script src="./pwa.js"></script>
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#222222">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#222222">
-    <script src="./js/components/app-taskbar.js"></script>
-    <script src="./js/components/app-window.js"></script>
-    <script src="./js/components/video-preview.js"></script>
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="./js/deskvideo.js"></script>
-    <script src="./js/deskvideo-common.js"></script>
-    <script src="./js/gamepad-api.js"></script>
-    <script src="./js/backend-api.js"></script>
-    <script src="./js/thirdparty/image-to-base64.js"></script>
-    <script src="./js/thirdparty/idb-keyval.js"></script>
-    <script src="./js/storage.js"></script>
-    <link rel="stylesheet" href="./css/extension.css">
-    <script src="./js/extension.js"></script>
-</head>
+
 	
-<embed height="100%" src="https://reac-tube.vercel.app" width="100%">
-</embed>
-<body trends>
-    <img class="background" draggable="false"/>
-	<app-taskbar position="top" start="./assets/fluent-icons/video_16_regular.svg" search="./assets/fluent-icons/search_16_regular.svg" onstart="dv.toggle.trends" onsearch="dv.toggle.search"></app-taskbar>
-	<div class="dv-trends"><span style="color: white;">Loading...</span></div>
-    <div class="dv-search">
-        <div class="search-container">
-            <input class="search" placeholder="Search Videos" enterkeyhint="search" />
-            <button appearance="accent">
-                <img src="./assets/fluent-icons/search_16_regular.svg" draggable="false" />
-            </button>
-        </div>
-        <div class="videos"></div>
-    </div>
-    <div class="dv-liked">
-        <div class="search-container">
-            <input class="search" placeholder="Filter Videos" enterkeyhint="search" />
-            <button appearance="accent">
-                <img src="./assets/fluent-icons/search_16_regular.svg" draggable="false" />
-            </button>
-        </div>
-        <div class="videos"></div>
-    </div>
-	
-<amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-9850650985058210">
-</amp-auto-ads>
+<!-- Display -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9850650985058210"
+     data-ad-slot="1457450033"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9850650985058210"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:360px;height:800px"
+     data-ad-client="ca-pub-9850650985058210"
+     data-ad-slot="5200200607"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 </body>
-</html>
+</amp>
